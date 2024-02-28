@@ -1,0 +1,42 @@
+.university-slider {
+  position: relative;
+  padding: 0 1rem;
+
+  &:active {
+    user-select: none;
+  }
+
+  @include respond-to('screen-large') {
+    padding: 0 5rem;
+  }
+
+  &__slider {
+    padding: 3.5rem 1rem 1rem 1rem;
+
+    @include respond-to('screen-large') {
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: $z-index-slider-arrows;
+    cursor: pointer;
+    transition: all $animation-duration;
+
+    @include respond-to('screen-large') {
+      transform: translate(50%, -50%);
+    }
+
+    &--right {
+      left: unset;
+      right: 0;
+      transform: rotate(180deg);
+
+      @include respond-to('screen-large') {
+        transform: rotate(180deg) translate(50%, 25%);
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.cube {
+  $scene-width-d: 40rem;
+  $scene-height-d: 40rem;
+
+  --scene-width: 90vw;
+  --scene-height: 90vh;
+  --translate-z: 45vw;
+
+  width: var(--scene-width);
+  height: var(--scene-height);
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(var(--translate-z));
+  transition: transform $animation-duration-secondary;
+
+  @include respond-to('screen-large') {
+    --scene-width: 40rem;
+    --scene-height: 40rem;
+    --translate-z: 20rem;
+  }
+
+  &--idle &__face {
+    //transform: unset;
+  }
+
+  &--face {
+    &-0 {
+      transform: translateZ(var(--translate-z)) rotateX(-90deg);
+      //transform: translateZ(var(--translate-z)) rotateY(-45deg) rotateX(-45deg);
+    }
+
+    &-1 {
+      transform: translateZ(var(--translate-z)) rotateY(0deg);
+    }
+
+    &-2 {
+      transform: translateZ(var(--translate-z)) rotateY(-90.01deg);
+    }
+
+    &-3 {
+      transform: translateZ(var(--translate-z)) rotateY(-180deg);
+    }
+
+    &-4 {
+      transform: translateZ(var(--translate-z)) rotateY(-270.01deg);
+    }
+  }
+
+  &__scene {
+    width: var(--scene-width);
+    height: var(--scene-height);
+    perspective: 500rem;
+
+    &--idle {
+      transform: scale(1.087);
+    }
+  }
+
+  &__face {
+    position: absolute;
+    width: var(--scene-width);
+    height: var(--scene-height);
+    background: $color-black;
+
+    &--top {
+      transform: rotateX(90deg) translateZ(var(--translate-z));
+    }
+
+    &--front {
+      transform: rotateY(0deg) translateZ(var(--translate-z));
+    }
+
+    &--left {
+      transform: rotateY(-90deg) translateZ(var(--translate-z));
+    }
+
+    &--right {
+      transform: rotateY(90deg) translateZ(var(--translate-z));
+    }
+
+    &--back {
+      transform: rotateY(180deg) translateZ(var(--translate-z));
+    }
+  }
+}

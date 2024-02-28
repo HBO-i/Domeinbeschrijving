@@ -1,0 +1,14 @@
+.select-button-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @include respond-to('screen-large') {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .select-button {
+      width: calc(50% - .5rem);
+    }
+  }
+}

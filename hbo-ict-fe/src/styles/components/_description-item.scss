@@ -1,0 +1,126 @@
+.description-item {
+  display: flex;
+  flex-direction: column;
+
+  @include respond-to('screen-large') {
+    flex: 1;
+    flex-direction: row;
+  }
+
+  &--open {
+    margin-bottom: 1rem;
+
+    @include respond-to('screen-large') {
+      margin-bottom: 0;
+    }
+  }
+
+  &--big > &__block {
+    @include respond-to('screen-large') {
+      width: 21rem !important;
+    }
+  }
+
+  &--0 > &__block {
+    background-color: #4F4879; // Var color-purple-darkest
+    margin-bottom: 1rem;
+
+    @include respond-to('screen-large') {
+      width: 15rem;
+      margin-bottom: 0;
+    }
+  }
+
+  //&--0 & {
+  //  margin-bottom: 1rem;
+  //
+  //  @include respond-to('screen-large') {
+  //    margin-bottom: 0;
+  //  }
+  //}
+  //
+  //&--1 & {
+  //  margin-bottom: 0;
+  //}
+
+  &--1 &__block {
+    background-color: #6B5FBF; // color-purple-dark
+
+    @include respond-to('screen-large') {
+      width: 12rem;
+    }
+  }
+
+  &--2 &__block {
+    background-color: #7D70F0; // color-purple
+  }
+
+  &--3 &__block {
+    background-color: #ECEAFD; // color-purple-light
+  }
+
+  &--3 &__block {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 2rem;
+    color: $color-black;
+    text-align: left;
+  }
+
+  &--2 > &__children {
+    //width: 100%;
+  }
+
+  &--text &__block {
+    font-size: .85rem;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.675rem;
+    font-style: normal;
+    font-weight: 700;
+    padding: 1rem;
+    color: $color-white;
+    border-radius: 1.375rem;
+  }
+
+  &__children {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    overflow: hidden;
+    //transition: max-height $animation-duration;
+
+    @include respond-to('screen-large') {
+      flex: 1;
+      overflow: unset;
+    }
+  }
+
+  &__icon {
+    width: 2rem;
+    height: auto;
+    //stroke: $color-white;
+    fill: none;
+    stroke-width: 3;
+    stroke: #491EC4;
+    transition: all $animation-duration;
+
+    &--rotated {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__text {
+    flex: 1;
+
+    @include respond-to('screen-large') {
+      //word-break: break-all;/
+      //hyphens: manual;
+    }
+  }
+}

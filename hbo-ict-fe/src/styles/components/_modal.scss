@@ -1,0 +1,45 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $z-index-modal;
+
+  &--active {
+    display: block;
+  }
+
+  &--open &__content {
+    animation: ShowIn $animation-duration;
+    animation-fill-mode: backwards;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color-black, .7);
+    //backdrop-filter: blur(10px);
+  }
+
+  &__content-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content {
+    position: absolute;
+    animation: ShowOut $animation-duration;
+    //animation-fill-mode: forwards;
+  }
+}

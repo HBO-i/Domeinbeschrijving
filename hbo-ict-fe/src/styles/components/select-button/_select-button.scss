@@ -1,0 +1,27 @@
+.select-button {
+  position: relative;
+  padding: 1rem 2rem 1rem 4rem;
+  color: $color-white;
+  font-weight: 600;
+  border: 1px solid $color-white;
+  border-radius: .8rem;
+  transition: background-color $animation-duration;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--selected {
+    color: $color-black;
+    background-color: $color-white;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: auto;
+  }
+}

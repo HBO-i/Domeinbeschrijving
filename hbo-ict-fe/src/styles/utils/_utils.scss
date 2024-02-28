@@ -1,0 +1,23 @@
+@import 'flex';
+@import 'space';
+
+.cursor-forbidden {
+  cursor: not-allowed;
+}
+
+.locked {
+  overflow: hidden;
+
+  @include respond-to('screen-large') {
+    overflow: auto;
+  }
+}
+
+.text-highlight {
+  background-color: #7D70F0;
+}
+
+.hidden {
+  visibility: hidden;
+}
+

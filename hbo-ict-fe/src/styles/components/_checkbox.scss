@@ -1,0 +1,30 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  color: $color-white;
+  font-weight: 600;
+  cursor: pointer;
+
+  &--checked &__icon {
+    opacity: 1;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.3875rem;
+    height: 1.3875rem;
+    border-radius: 0.1875rem;
+    background: $color-white;
+  }
+
+  &__icon {
+    opacity: 0;
+    transition: opacity $animation-duration;
+  }
+
+  &__hint {
+    margin-left: .5rem;
+  }
+}

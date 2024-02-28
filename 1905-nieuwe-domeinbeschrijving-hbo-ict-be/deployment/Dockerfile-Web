@@ -1,0 +1,9 @@
+FROM nginx
+
+COPY deployment/nginx.conf /etc/nginx/nginx.conf
+
+WORKDIR /var/www/html
+
+COPY ./ /var/www/html
+
+EXPOSE 80

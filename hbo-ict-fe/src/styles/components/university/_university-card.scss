@@ -1,0 +1,55 @@
+.university-card {
+  position: relative;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  //height: calc(315px - 7rem);
+  height: 10rem;
+  padding: 4rem 2rem 3rem 2rem;
+  border-radius: 1.5625rem;
+  flex-grow: 1;
+  background-color: $color-white;
+  box-shadow: $box-shadow-default;
+  transition: all $animation-duration;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  &__icon-container {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    padding: 1.2rem;
+    border-radius: 50%;
+    background-color: $color-white;
+  }
+
+  &__cap {
+    padding: .8rem .8rem .6rem .8rem;
+    background-color: #2F246F;
+    border-radius: 50%;
+  }
+
+  &__image {
+    width: 12rem;
+    height: auto;
+    //margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 1.3625rem;
+    font-weight: 800;
+    line-height: 2.21875rem;
+    text-align: center;
+  }
+
+  &__icon {
+    width: 1.7rem;
+    height: auto;
+  }
+}

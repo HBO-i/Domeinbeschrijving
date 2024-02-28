@@ -1,0 +1,13 @@
+.professional-skills-page {
+  .tasks-page__header {
+    margin-bottom: 1rem;
+
+    @include respond-to('screen-large') {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .description-item__block {
+    min-width: 20rem !important;
+  }
+}

@@ -1,0 +1,28 @@
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.description-item-block {
+  animation: FadeIn $animation-duration ease-in;
+  animation-fill-mode: backwards;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+
+    @include respond-to('screen-large') {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__breadcrumbs {
+    color: $color-black;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+}

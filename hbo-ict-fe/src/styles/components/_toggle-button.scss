@@ -1,0 +1,34 @@
+.toggle-button {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 4rem;
+  height: 2rem;
+  padding: 0 .5rem;
+  border-radius: 1rem;
+  background-color: $color-purple;
+  cursor: pointer;
+  user-select: none;
+
+  &__indicator {
+    position: absolute;
+    transition: left $animation-duration;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: .25rem;
+    left: .25rem;
+    background-color: $color-white;
+    border-radius: 50%;
+
+    &--right {
+      left: calc(100% - 1.75rem);
+    }
+  }
+
+  &__label {
+    font-weight: bold;
+    font-size: .8rem;
+    color: $color-white;
+  }
+}

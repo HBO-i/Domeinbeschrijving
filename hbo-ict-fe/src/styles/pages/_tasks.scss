@@ -1,0 +1,16 @@
+.tasks-page {
+  @include page-padding;
+  @include divider-shadow;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+
+    @include respond-to('screen-large') {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

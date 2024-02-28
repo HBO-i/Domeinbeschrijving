@@ -1,0 +1,151 @@
+$navbar-padding-h: 1.31rem;
+$navbar-padding-v: .9rem;
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0 1rem 1rem;
+  box-shadow: $box-shadow-default;
+
+  @include respond-to('screen-large') {
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  &__left {
+    display: flex;
+    margin-bottom: .5rem;
+
+    @include respond-to('screen-large') {
+      padding: 2rem 0 0 4rem;
+      align-items: center;
+      margin-bottom: unset;
+    }
+  }
+
+  &__logo {
+    height: 4rem;
+    width: auto;
+    margin-bottom: -.7rem;
+    cursor: pointer;
+
+    @include respond-to('screen-large') {
+      margin-bottom: unset;
+      height: 7rem;
+    }
+  }
+
+  &__menu-button {
+    @include respond-to('screen-large') {
+      display: none;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: $color-white;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: all $animation-duration;
+    box-shadow: $box-shadow-default;
+    z-index: 1;
+
+    @include respond-to('screen-large') {
+      position: relative;
+      box-shadow: none;
+
+      &:after {
+        content: unset;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 1rem;
+      top: -.7rem;
+      left: 0;
+      right: 0;
+      background-color: $color-white;
+    }
+
+    &--open {
+      transform: scaleY(100%);
+    }
+
+    & > div:nth-child(1) {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      :first-child {
+        margin-right: 2rem;
+      }
+    }
+
+    & > div:nth-child(2) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+
+      @include respond-to('screen-large') {
+        justify-content: flex-end;
+        margin-right: 6rem;
+      }
+
+      .dropdown:nth-child(3) .dropdown__menu {
+        left: 45%;
+
+        @include respond-to('screen-large') {
+          left: 50%;
+        }
+      }
+
+      & > :not(:last-child) {
+        order: 1;
+
+        @include respond-to('screen-large') {
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+
+  &__locale {
+    display: none !important;
+
+    @include respond-to('screen-large') {
+      display: flex !important;
+      visibility: hidden;
+    }
+  }
+
+  &__menu-item {
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  &__input {
+    order: 0;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    @include respond-to('screen-large') {
+      order: 1;
+      width: auto;
+    }
+  }
+
+  &__icon {
+    width: 2rem;
+    height: auto;
+  }
+}

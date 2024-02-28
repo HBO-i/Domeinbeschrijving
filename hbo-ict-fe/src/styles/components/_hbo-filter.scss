@@ -1,0 +1,168 @@
+.hbo-filter {
+  color: $color-white;
+  font-size: .9rem;
+
+  &--idle.hbo-filter--face1 .cube__face--front {
+    position: relative;
+
+    @include respond-to('screen-large') {
+      position: absolute;
+    }
+  }
+
+  &--idle.hbo-filter--face1 .cube__face:not(.cube__face--front) {
+    display: none;
+
+    @include respond-to('screen-large') {
+      display: unset;
+    }
+  }
+
+  .cube__face {
+    padding: 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+
+    &--front {
+      overflow: auto;
+
+      @include respond-to('screen-large') {
+        overflow: unset;
+      }
+
+      .hbo-filter__tooltip {
+        left: 7rem;
+
+        @include respond-to('screen-large') {
+          left: 5.5rem;
+        }
+      }
+    }
+  }
+
+  &__text-box {
+    padding: 1rem 1.5rem;
+    border: 1px solid $color-white;
+    border-radius: 1.25rem;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &--end {
+      @include respond-to('screen-large') {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    position: relative;
+    padding-bottom: .2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $color-white;
+  }
+
+  &__text {
+    &--title {
+      display: block;
+      font-weight: 700;
+    }
+
+    &--warning {
+      margin-bottom: 1rem;
+
+      @include respond-to('screen-large') {
+        margin-right: 1rem;
+        margin-bottom: 0;
+      }
+    }
+
+    &--small {
+      font-size: .8rem;
+    }
+  }
+
+  &__text {
+    &--order {
+      position: relative;
+    }
+  }
+
+  &__icon {
+    &--close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1rem;
+      width: 1.5rem;
+      height: auto;
+      cursor: pointer;
+
+      @include respond-to('screen-large') {
+        top: 3.5rem;
+        right: 3rem;
+        width: 1.3rem;
+      }
+    }
+
+    &--switch {
+      width: 4rem;
+      height: auto;
+      margin-left: 1rem;
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    top: -1.5rem;
+    left: 8.5rem;
+
+    &--top {
+      top: -1.5rem;
+      left: 5.5rem;
+
+      @include respond-to('screen-large') {
+        left: 5.5rem;
+      }
+    }
+  }
+
+  &__order {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0 1.5rem 0;
+
+    @include respond-to('screen-large') {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 2rem 2rem 1rem 0;
+    }
+
+    .select-button {
+      padding: 1rem 4rem;
+      text-align: center;
+    }
+
+    & > div:first-child {
+      margin-bottom: 1rem;
+
+      @include respond-to('screen-large') {
+        margin-bottom: 0;
+      }
+    }
+
+    & > div:last-child {
+      //flex: 1;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

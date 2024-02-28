@@ -1,0 +1,31 @@
+@import 'reset';
+@import 'typography';
+
+html {
+  height: 100%;
+}
+
+body {
+  background-size: cover;
+  font-family: OpenSans, 'sans-serif';
+}
+
+main, #root {
+  height: 100%;
+}
+
+main {
+  position: relative;
+
+  @include respond-to('screen-large') {
+    //z-index: 1;
+  }
+}
+
+section[class$="-page"] {
+  //padding: 1rem;
+}
+
+input[type=text]:disabled, input[type=password]:disabled {
+  cursor: not-allowed;
+}

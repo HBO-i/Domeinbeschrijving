@@ -1,0 +1,41 @@
+.flex {
+  display: flex;
+
+  &--d {
+    @include respond-to('screen-large') {
+      display: flex;
+    }
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--justify-between {
+    justify-content: space-between;
+  }
+
+  &--justify-end {
+    justify-content: flex-end;
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--align-start {
+    align-items: start;
+  }
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &-1 {
+    flex: 1;
+  }
+}

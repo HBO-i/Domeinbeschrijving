@@ -1,0 +1,37 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  IMAGE_TAG_APP: $CI_REGISTRY_IMAGE/app:$CI_COMMIT_REF_SLUG
+  IMAGE_TAG_WEB: $CI_REGISTRY_IMAGE/web:$CI_COMMIT_REF_SLUG
+  APP_NAME: $CI_PROJECT_NAME
+
+build:
+  stage: build
+  tags: [build]
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -f ./deployment/Dockerfile -t $IMAGE_TAG_APP .
+    - docker push $IMAGE_TAG_APP
+    - docker build -f ./deployment/Dockerfile-Web -t $IMAGE_TAG_WEB .
+    - docker push $IMAGE_TAG_WEB
+  artifacts:
+    paths:
+      - ./deployment/docker-compose-acc.yml
+
+deploy:
+  stage: deploy
+  tags: [acceptance]
+  variables:
+    GIT_STRATEGY: none
+    APP_URL: domeinbeschrijving-hboict.acc.theburo.nl
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker pull $IMAGE_TAG_APP
+    - docker pull $IMAGE_TAG_WEB
+    - docker compose -p $CI_PROJECT_NAME-$CI_PROJECT_ID -f ./deployment/docker-compose-acc.yml up -d

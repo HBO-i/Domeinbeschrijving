@@ -1,0 +1,28 @@
+.input {
+
+  &__hint {
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  &__element-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .4rem;
+    border: 1px solid #545F71;
+    border-radius: 0.375rem;
+  }
+
+  &__element {
+    border: none;
+    outline: none;
+    margin-right: .25rem;
+  }
+
+  &__icon {
+    cursor: pointer;
+  }
+}

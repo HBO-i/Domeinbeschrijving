@@ -1,0 +1,26 @@
+.universities-page {
+  box-shadow: $box-shadow-default;
+  position: relative;
+  padding-bottom: 20rem;
+
+  .hero {
+    box-shadow: none;
+  }
+
+  &__universities {
+    margin-bottom: -4rem;
+    padding-bottom: 6rem;
+    transform: translateY(-20%);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0rem;
+
+    @include respond-to('screen-large') {
+      margin-bottom: -8rem;
+      padding-bottom: 6rem;
+      transform: translateY(-30%);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.home-page {
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+
+    & > :first-child {
+      margin-bottom: 1rem;
+
+      @include respond-to('screen-large') {
+        margin-bottom: 0;
+      }
+    }
+
+    @include respond-to('screen-large') {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 150%;
+      max-width: 50rem;
+      z-index: 1;
+
+      & > :first-child {
+        margin-right: 3rem;
+      }
+    }
+  }
+}
