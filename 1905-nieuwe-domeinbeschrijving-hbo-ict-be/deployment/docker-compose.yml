@@ -49,17 +49,12 @@ services:
       - api
     networks:
       - internal
-      - traefik
-
     volumes:
       - storage_link:/var/www/html/public/storage
 
 networks:
   internal:
     driver: bridge
-  traefik:
-    external: true
-
 volumes:
   storage_link:
     driver: local
