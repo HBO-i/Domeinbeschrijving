@@ -1,4 +1,4 @@
-# Fashion Hotspots API Laravel 9
+# HBO-I Backend
 
 Build with laravel version **10.0**
 
